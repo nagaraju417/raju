@@ -1,374 +1,167 @@
-<?php
-session_start();
-?>
-
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<title>Fleet Hudma</title>
-<link rel="icon" href="images/faveicon.png" type="image/png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranetor Website</title>
+<link rel="icon" href="images/favicon.png" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/selectoption.css">
+
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css" />
 <!--[if lt IE 9]>
 <script src="js/html5shiv.min.js"></script>
 <![endif]-->
-
-
-
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="validation/jquery.validate.min.js"></script> 
-
-
-
- 
-<script type="text/javascript">
-/**
-  * Basic jQuery Validation Form Demo Code
-  * Copyright Sam Deering 2012
-  * Licence: http://www.jquery4u.com/license/
-  */
-(function($,W,D)
-{
-    var JQUERY4U = {};
-
-    JQUERY4U.UTIL =
-    {
-        setupFormValidation: function()
-        {
-            //form validation rules
-            $("#register-form").validate({
-                rules: {
-				 type: {
-                        required: true, 
-                    },
-                    
-                    email: {
-                        required: true, 
-						minlength: 8
-                    },
-					 
-					   pwd: {
-                         required: true, 
-                        minlength: 4
-                    },
-					 
-                   
-                },
-                messages: {
-                    
-					email: {
-                       required  : "Please enter  email", 
-                    }, 
-					 
-					 pwd: {
-                       required  : "Please enter a password",
-                        minlength: "Inavalid Email/Password"
-                    }, 
-                     
-                },
-                submitHandler: function(form) {
-                    form.submit();
-                }
-            });
-        }
-    }
-
-    //when the dom has loaded setup form validation rules
-    $(D).ready(function($) {
-        JQUERY4U.UTIL.setupFormValidation();
-    });
-
-})(jQuery, window, document);
-</script>
-
-
 </head>
 
 <body>
-
-
-<style>
-
-#register-form .inputrow  label.error {
-    color:#CC0000;
-    display: inline-block;
-    margin: 4px 0 5px 10px;
-    padding: 0;
-    text-align: left;
-	font-size:12px; 
-}
-</style>
-
-
-<section class="wrapermain">
-
-
- <form action="" method="post" enctype="multipart/form-data" id="register-form" novalidate="novalidate" name="abc">
-
-<div class="organisationbody organisationbody2">
-
-<div class="container">
-<h3>WELCOME TO <span>PRANETOR FLEET</span> MANAGEMENT</h3>
-<div class="caption-container caption-containerfour">
-	<div class="registerformmain organisationmain">
-                <div class="formbg">
-                <h2><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;MEMBER LOGIN</h2>
-            
-                <fieldset>
-                 
-                <div class="organisationinputrow">
-                <div class="inputrow">
-                    <label for="type">Type *</label>
-                    <div class="inputtype">
-                        <select name="type" class="form-control">
-                                                <option value="">Type</option>
-                                                <option value="Admin">Admin</option>
-												  <option value="driver">driver</option>
-                                                  <?php 
-	  
-
-include 'db1.php';
-	  $q=mysql_query("select * from subuser");
-$q1=mysql_num_rows($q);
-  while($row=mysql_fetch_array($q))
-  { 
-     echo "<option value=$row[usertype]> $row[usertype]</option>";
-}
-	  
-	    
-	   ?>
- 						
-                                            </select>
-                </div>
-                </div> 
-                
-                </div>
-                
-                
-                <div class="organisationinputrow">
-                <div class="inputrow">
-                    <label for="email">Email Id *</label>
-                    <div class="inputtype">
-                    	<input type="email" class="form-control" placeholder="" name="email">
-                    </div>
-                
-                </div>
-                </div>
-                
-                <div class="organisationinputrow">
-                <div class="inputrow">
-                    <label for="pwd">Password *</label>
-                    <div class="inputtype">
-                    	<input type="password" class="form-control" placeholder="" name="pwd">
-                        
-                    </div>
-                <small>Forgot Password ?</small>
-                </div>
-                
-                
-                </div>
-                 
-                <div class="inputrow">
-				  <input type="submit" name="submit" class="btn btn-default" value="LOGIN"> 
-          
-                    <a href="index.php" class="goback">go back</a>
-                </div>
-                
-                          
-                </fieldset>
-           
-                
-                
-                </div>
-                </div>
-                </div>
-                </div>
-
-</div>
-     </form>
- 
-
+<section class="mainWraper">
+<section class="wraper">
+	<div class="quotes">
+    	<ul class="socialIcons">
+            <li><a href="#popup4" data-popup="lightbox" class="findOut quoteIcon">Quote</a></li>
+        	<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#"><span class="fa fa-behance"></span></a></li>
+        </ul>
+    </div>
+    
+    <header class="header">
+	<div class="container">
+          <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4"><h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="logo" /></a></h1></div>
+              <div class="col-lg-8 col-md-8 col-sm-8">
+              	<nav class="navMain">
+              		<ul>
+                    	<li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="works.html">Work</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li><a href="contact.html" class="active">Contact Us</a></li>
+                    </ul>
+                </nav>
+              </div>
+              </div>
+          </div>
+        </header>
+    </div>
 </section>
 
-  
-   
-<?php 
-	if(isset($_POST['submit']))
-	{ 
-	 
-	 $type=$_POST['type'];
-	 $email=$_POST['email']; 
-	 $pwd=$_POST['pwd'];
-	  
-	
-	include 'admindb.php';  
-	
-	
-	if($type=='Admin')
-	{
-	$q=mysql_query("SELECT * FROM `adminregister` WHERE  type='$type' and emailid='$email' and password='$pwd' and status='Active'");
-$qq=mysql_num_rows($q);
-$q2=mysql_fetch_array($q); 
-		  if($qq==true)
-		{ 
-		
-			$adname=$q2['fname'];
-			$_SESSION['name']=$adname;
-			
-			$ademail=$q2['emailid'];
-			 $_SESSION['email']=$ademail;
-			  $_SESSION['subuser']=$ademail;
-			   
-			   $r=mysql_query("select * from admincomapnyinfo where adminemail='$ademail'");
-		  $rr=mysql_num_rows($r); 
-			 $row=mysql_fetch_array($r);
-			echo $email1=$row['adminemail'];
-		
-					if($email!==$email1)
-					{   //$UP=mysqli_query("UPDATE `members` SET  count='1' WHERE Email='$email'")or die(mysqli_error());
-						echo "<script>window.location='fillcompanyinfo.php';</script>"; 
-						
-						}
-							else
-						 {  	
-								$q=mysql_query("select * from admincomapnyinfo where adminemail='$ademail'");
-								 $row1=mysql_fetch_array($q);
-								echo $sec=$row1['security'];
-								 
-								 if($sec=='NONE')
-								 {  
-								 
-								echo "<script>window.location='home/index1.php';</script>";
-								  
-									 }
-									 else  if($sec=='QUESTIONS')
-								 { 
-									 echo "<script>window.location='securityverifiication.php';</script>";
-									 }
-									 else  if($sec=='OTP')
-								 { 
-									 echo "<script>window.location='otp.php';</script>";
-									 }
-						  }
-		   
-			 
-		 }
-    }
-	else if($type=='driver')
-	{
-	
-		include 'db1.php';
-		
-		$q=mysql_query("SELECT * FROM `newdriver1` WHERE   loginemail='$email' and pwd='$pwd' and status='Active'");
-	$qq=mysql_num_rows($q);
-	$q2=mysql_fetch_array($q); 
-				  if($qq==true)
-				{
-				
-	                            $dri=$q2['fname'];
-								$_SESSION['drname']=$dri;
-								
-								$drid=$q2['id'];
-								$_SESSION['drid']=$drid;
-							 
-										 
-				
-					echo "<script> window.location='subuser/driverlogin/index.php';</script>";
-			
-			       }
-	}
-  
-	 
-	 else
-	{
-			include 'db1.php';
-			
-				 $q=mysql_query("SELECT * FROM `subuser` WHERE  usertype='$type' and loginemail='$email' and loginpwd='$pwd' and status='Active'")or die(mysql_error());
-$qq=mysql_num_rows($q);
-$q2=mysql_fetch_array($q); 
-		  if($qq==true)
-		{  
-			 
-			function getUserIP()
-			{
-				$client  = @$_SERVER['HTTP_CLIENT_IP'];
-				$forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-				$remote  = $_SERVER['REMOTE_ADDR'];
-			
-				if(filter_var($client, FILTER_VALIDATE_IP))
-				{
-					$ip = $client;
-				}
-				elseif(filter_var($forward, FILTER_VALIDATE_IP))
-				{
-					$ip = $forward;
-				}
-				else
-				{
-					$ip = $remote;
-				}
-			
-				return $ip;
-			}
+<div class="lightBox" id="popup4">
+    <div class="lightBoxInner">
+        <div class="lightBoxInner2">
+        <div class="lightBoxContent">
+        	<a class="close" href="#"><span class="fa fa-times"></span></a>
+            <div class="titleBlock">
+                <h3>GET A FREE ESTIMATE</h3>
+            </div>
+            <div class="formBlock">
+            <div class="loading"></div>
+<div class="mess_info"></div>
+       <form id="email" name="form" class="email" method="post">
+        <fieldset>
+          <div class="formRow">
+            <input type="text" name="name" class="inputtab" value="Name" required>
+            <input type="tel" name="phone" class="inputtab" value="Phone" required>
+            <input type="email" name="email" class="inputtab" value="Email" required>
+            <input type="Subject" name="subject" class="inputtab" value="subject" required>
+          </div>
+          
+          <div class="formRow">
+          	 <textarea class="inputtexteria" placeholder="message" name="message" rows="6" cols="6" required></textarea>
+          	 <input type="submit" name="submit" class="subBtn" value="submit">
+          </div>
 
-				
-				$user_ip = getUserIP();
-				
-				  $user_ip; // Output IP address [Ex: 177.87.193.134]
-				 
-						$subname=$q2['fname'];
-						$_SESSION['name']=$subname;
-						$subemail=$q2['loginemail'];
-						 $_SESSION['email']=$subemail;
-						  $_SESSION['subuser']=$subemail;
-						  
-				 date_default_timezone_set("asia/calcutta");
-				 date_default_timezone_get();
-				 $date=date('d/m/Y'); 
-				  $dt1=date("Y-m-d h:i:s a"); 
-				  
-						  $id=$q2['id'];
-						  $_SESSION['subuserid']=$id;
-						   
-				   
-				echo $location=$a1;
-   
-						  mysql_query("INSERT INTO `userlog`(`num`, `id`, `email`, `date`, `starttime`, `endtime`, `duration`, `location`, `ipaddress`) VALUES ('','$id','$subemail','$date','$dt1','','','$location','$user_ip')");
-							 
-							 
-				  $_SESSION['num'] = mysql_insert_id(); 
-				  $num=$_SESSION['num']; 
-							 
-						echo "<script> window.location='home/index.php';</script>";
-								
-		}
-				else
-				{
-				echo "<script> alert('Inavalid Email/Password');window.location='login.php';</script>";
-		
-				}
-		
- }
-	 echo "<script>alert('Inavalid Email/Password');</script>";
-	} 
-		?>
-	 
+          
+        </fieldset>
+      </form>
+    </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="contacteMain">
+	<div class="container">
+    	<div class="row">
+        	
+            <div class="contactinnerBg">
+            	<h4>Contact Us</h4>
+            	
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                	<div class="contactMapBg">
+                        
+                        <div class="contacts">
+                              <h6>Address :</h6>
+                              <span>Pranetor</span>
+                              <small>Plot No 17-24, <br/>Reliance Cyber Villa,<br/> Vittal Rao Nagar <br/> Madhapur, Hyderabad<br /> Telangana 500081</small>
+                       </div>
+                        <div class="pranetorAddress">
+                            	<p>+9140-65550441</p>
+                            	<a>Info@pranetor.com</a>
+                        </div> 
+                        
+                        <div class="contactMp">
+                        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.339650070345!2d78.38303121544315!3d17.443450188044963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb915f9bb7ff87%3A0x71cf5035ab0b77f5!2sreliance+cyber+ville!5e0!3m2!1sen!2sin!4v1484820983272" width="540" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>   
+                            
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                	<div class="formBlock contectformBlock">
+                	<h3>Request Form</h3>
+ 
+                 <form   name="form"   method="post" action="contact.php">
+                  <fieldset>
+                    <div class="formRow">
+                      <input type="text" name="name" class="texttab" placeholder="Name" required>
+                     </div>
+                     
+                    
+                    <div class="formRow">
+                      <input type="number" name="phone" class="texttab" placeholder="Phone" required>
+                     </div>
+                     
+                     <div class="formRow">
+                      <input type="email" name="email" class="texttab" placeholder="Email" required>
+                    </div>
+                    
+                    <textarea cols="10" rows="10" class="texteritab" placeholder="message" name="message" required></textarea>
+                    <div class="submitbg">
+                      <input type="submit" name="submit" class="submittab" value="submit">
+                    </div>
+                  </fieldset>
+                </form>
+             
+            </div>	
+        
+        
+        </div>
+    </div>
+</section>
+</section>
+
+
+
+
+
+
+
+<footer>
+	<p>© 2015-2016 By Pranetor</p>
+</footer>
 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/videopopup.js"></script>
-<script type="text/javascript" src="js/jquery.dropkick-min.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-
 <script type="text/javascript" src="js/main.js"></script>
 
-
-
-</body>
+ </body>
 </html>
